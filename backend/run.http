@@ -1,0 +1,25 @@
+GET http://localhost:7541/list
+
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    "Stu_name":"M Dhanush",
+    "College_name":"Muthayammal Engineering College",
+    "Year":"II",
+    "Course":"Computer science ",
+    "Email_id":"dhanush08@gmail.com",
+    "Contact":98765678,
+    "Event_type":"Quiz"
+}
+
+DELETE http://localhost:7541/delete/karthi
+
+
+
+PUT http://localhost:7541/update/Anand
+Content-Type: application/json
+
+{
+    "Event_type":"Quiz"
+}
