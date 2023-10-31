@@ -1,23 +1,25 @@
+import axios  from "axios"
+const url="http://localhost:7541"
 // const onProposalsLoad=async(dept_id)=>{
+const onProposalsLoad=async(Symp_id)=>{
     
-
+    // alert(dept_id)
+    const returned=await axios.get(`${url}/list`)
+    let ids=[]
+        returned.data.rows.map((v)=>{
+            ids.push(v)
+        })
+        return ids  
+}
 
   
-//     // alert(dept_id)
-//     const returned=await axios.get(`${url}/seminar/find/${dept_id}`)
-//     let ids=[]
-//         returned.data.rows.map((v)=>{
-//             ids.push(v)
-//         })
-//         return ids
-// }
-const onPropose=async(obj)=>{
+export const onPropose=async(obj)=>{
 
-    const url="http://localhost:7541"
+   
 
     // alert(JSON.stringify(obj))
-    const returned = await axios.post(`${url}/newrecord${obj.event_name}`,obj)
+    const returned = await axios.post(`${url}/newrecord`,obj)
     return returned.data
 }
 
-export default onPropose
+export default onProposalsLoad

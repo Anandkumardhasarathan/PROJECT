@@ -1,9 +1,63 @@
-import './symp.css'
-import { useState } from 'react'
-import onPropose from './fnbconnect'
+import './symp.css';
+import { useState } from 'react';
+// import axios from 'axios';
+import onProposalsLoad from './fnbconnect';
+import { onPropose } from './fnbconnect';
+import axios from 'axios';
 
+ const New=()=>{
 
-const New=()=>{
+  const[information,setInformation]=useState("")
+
+  const[Symposium,setSymposium]=useState({
+    "Stu_name":"",
+    "College_name":"",
+    "Year":"",
+    "Course":"",
+    "Email_id":"",
+    "Contact":0,
+    "Event_type":""
+  })
+
+  console.log(Symposium)
+  const[proposal,setProposal]=useState([])
+
+  const fillPorposals=async(Symp_id)=>{
+    const temp = await onProposalsLoad(Symp_id)
+    setProposal(temp)
+}
+
+const infoCollect=(eve)=>{
+  const{name,value}=eve.target
+  setSymposium((old)=>{
+      if(name==="Stu_name"||name==="College_name"||name==="Year"||name==="Course"||name==="Email_id"||name==="Contact"||name==="EVent_type"){
+          return{
+              ...old,
+              [name]:value
+          }
+      }
+      else if(name==="Symp_id"){
+          fillPorposals(value)
+          return{
+              ...old,
+              [name]:parseInt(value)
+          }
+      }
+      else{
+          return{
+              ...old,
+              [name]:parseInt(value)
+          }
+      }
+  })
+}
+
+const callPropose=async()=>{
+  // const temp = await onPropose(Symposium)
+  await axios.post(`http://localhost:7541/newrecord`,Symposium)
+  // setInformation(temp.message)
+}
+
     return(
 
       
@@ -32,33 +86,33 @@ const New=()=>{
         <tbody><tr>
             <td>
               <label><b>NAME</b></label>
-            </td><td><input type="text" name="name" placeholder="Full Name" /></td>
+            </td><td><input type="text" name="Stu_name" value={Symposium.Stu_name} onChange={infoCollect} placeholder="Full Name" /></td>
           </tr>
           <tr>
             <td>
               <label><b>COLLEGE NAME</b></label>
-            </td><td>  <input type="text" name="college name" placeholder="College Name" /></td>
+            </td><td>  <input type="text" name="College_name" value={Symposium.College_name} onChange={infoCollect} placeholder="College Name" /></td>
           </tr>
           <tr>
             <td>
               <label><b>YEAR</b></label>
-              </td><td>  <input type="text" name="Year" placeholder="Year" /></td>
+              </td><td>  <input type="text" name="Year" value={Symposium.Year} onChange={infoCollect} placeholder="Year" /></td>
           </tr>
           <tr>
             <td>
                 <label><b>DEPARTMENT</b></label>
-            </td><td><input type="text" name="department" placeholder="Department Name" /></td>
+            </td><td><input type="text" name="Course" value={Symposium.Course} onChange={infoCollect} placeholder="Department Name" /></td>
           </tr>
           <tr>
             <td>
               <label><b>EMAIL ID</b></label>
-            </td><td><input type="email" placeholder="Email ID" /></td>
+            </td><td><input type="email" name='Email_id' value={Symposium.Email_id} onChange={infoCollect} placeholder="Email ID" /></td>
           </tr>
           <tr>
           </tr><tr>
             <td>
               <label><b>CONTACT</b></label>
-            </td><td> <input type="tel" name="mobile number" placeholder="Mobile Number" /></td>
+            </td><td> <input type="tel" name="Contact" value={Symposium.Contact} onChange={infoCollect} placeholder="Mobile Number" /></td>
           </tr>
           </tbody></table>
     </form>
@@ -70,20 +124,37 @@ const New=()=>{
               <label><b>TECHNICAL EVENT:</b></label>
             </td>
           </tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />PAPER PRESENTATION</td></tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />PROJECT PRESENTATION</td></tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />CODIGO</td></tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />QUIZ</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />PAPER PRESENTATION</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />PROJECT PRESENTATION</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />CODIGO</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />QUIZ</td></tr>
           <tr>
             <td>
               <label><b>NON TECHNICAL EVENT</b></label>
             </td>
           </tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />IPL AUCTION</td></tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />DIALOGUE FINDING</td></tr>
-          <tr><td><input type="radio" name="event" defaultvalue="Paper Presentation" />SHERLOCK HOLMES</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />IPL AUCTION</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />DIALOGUE FINDING</td></tr>
+          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />SHERLOCK HOLMES</td></tr>
          <br></br>
-            <tr><td><button style={{align:'center',marginBlockStart:'10px',marginInlineStart:'50px'}}>Submit</button></td></tr>
+            {/* <tr><td><button style={{align:'center',marginBlockStart:'10px',marginInlineStart:'50px'} }>Submit</button></td></tr> */}
+          <tr><td><input type='button' onClick={callPropose} value="Submit" />
+          <input type='button' value={'reset'} onClick={()=>{
+                            setSymposium(()=>{
+                              return{
+                                "Stu_name":"",
+                                "College_name":"",
+                               "Year":"",
+                               "Course":"",
+                                "Email_id":"",
+                                "Contact":0,
+                               "Event_type":""
+
+                              }
+                             })
+                            }}/>
+          
+          </td></tr>
 
           </tbody>
           </table>
@@ -93,5 +164,4 @@ const New=()=>{
 </>
     )
 }
-
 export default New

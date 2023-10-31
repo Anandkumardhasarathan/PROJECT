@@ -45,7 +45,8 @@
 const express= require('express')
 const bodyparser=require('body-parser')
 const mysql=require('mysql2')
-// const cors=require('cors')
+
+const cors=require('cors')
 // const upndel=require('./sympmodify')
 
 
@@ -63,7 +64,7 @@ database.connect(()=>{
 })
 
 const server=express()
-// server.use(cors())
+server.use(cors())
 
 // server.use('/information',upndel)
 server.use(bodyparser.urlencoded({extended:true}))
@@ -103,9 +104,9 @@ server.get('/list',async(req,res)=>{
 // })
 
 server.post('/newrecord',async(req,res)=>{
-    const{Stu_name,College_name,Year,Course,Email_id,Contact,Event_type}=req.body
-    const sql="insert into registration values(?,?,?,?,?,?,?)"
-    database.query(sql,[Stu_name,College_name,Year,Course,Email_id,Contact,Event_type],(err,records)=>{
+    const{Symp_id,Stu_name,College_name,Year,Course,Email_id,Contact,Event_type}=req.body
+    const sql="insert into registration values(?,?,?,?,?,?,?,?)"
+    database.query(sql,[Symp_id,Stu_name,College_name,Year,Course,Email_id,Contact,Event_type],(err,records)=>{
         if(err){
             res.status(500).json({'error':err.message})
             return

@@ -4,7 +4,8 @@ POST http://localhost:7541/newrecord
 Content-Type: application/json
 
 {
-    "Stu_name":"M Dhanush",
+    "Symp_id":5,
+    "Stu_name":"Dhanush",
     "College_name":"Muthayammal Engineering College",
     "Year":"II",
     "Course":"Computer science ",
