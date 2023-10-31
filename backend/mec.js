@@ -90,18 +90,7 @@ server.get('/list',async(req,res)=>{
     })
 })
 
-// server.post('/postdetails',async(req,res)=>{
-//     const{Stu_name,College_name,Year,Course,Email_id,Contact,Event_type}=req.body
 
-//     const sql="insert into registration values(?,?,?,?,?,?,?)"
-//     database.query(sql,[Stu_name,College_name,Year,Course,Email_id,Contact,Event_type],(error,result)=>{
-//         if(error){
-//             res.status(500).json({'error':error.message})
-//             return
-//         }
-//         res.status(200).json({'message':'registered successfully!!!!....'})
-//     })
-// })
 
 server.post('/newrecord',async(req,res)=>{
     const{Symp_id,Stu_name,College_name,Year,Course,Email_id,Contact,Event_type}=req.body

@@ -16,7 +16,7 @@ import axios from 'axios';
     "Course":"",
     "Email_id":"",
     "Contact":0,
-    "Event_type":""
+    "Event_type":" "
   })
 
   console.log(Symposium)
@@ -26,11 +26,13 @@ import axios from 'axios';
     const temp = await onProposalsLoad(Symp_id)
     setProposal(temp)
 }
+console.log(Symposium)
+// console.log(typeof(Symposium.Event_type))
 
 const infoCollect=(eve)=>{
   const{name,value}=eve.target
   setSymposium((old)=>{
-      if(name==="Stu_name"||name==="College_name"||name==="Year"||name==="Course"||name==="Email_id"||name==="Contact"||name==="EVent_type"){
+      if(name==="Stu_name"||name==="College_name"||name==="Year"||name==="Course"||name==="Email_id"||name==="Contact"||name==="Event_type"){
           return{
               ...old,
               [name]:value
@@ -60,7 +62,6 @@ const callPropose=async()=>{
 
     return(
 
-      
 
 <>
 <div className="background"/>
@@ -124,18 +125,18 @@ const callPropose=async()=>{
               <label><b>TECHNICAL EVENT:</b></label>
             </td>
           </tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />PAPER PRESENTATION</td></tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />PROJECT PRESENTATION</td></tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />CODIGO</td></tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />QUIZ</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="Paper Presentation" onChange={infoCollect} />PAPER PRESENTATION</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="Project" onChange={infoCollect} />PROJECT PRESENTATION</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="Codigo" onChange={infoCollect} />CODIGO</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="Quiz" onChange={infoCollect} />QUIZ</td></tr>
           <tr>
             <td>
               <label><b>NON TECHNICAL EVENT</b></label>
             </td>
           </tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />IPL AUCTION</td></tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />DIALOGUE FINDING</td></tr>
-          <tr><td><input type="radio" name="Event_type" value={Symposium.Event_type} onChange={infoCollect} />SHERLOCK HOLMES</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="IPL Auction" onChange={infoCollect} />IPL AUCTION</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="Dialogue Finding" onChange={infoCollect} />DIALOGUE FINDING</td></tr>
+          <tr><td><input type="radio" name="Event_type" value="Sherlock Holmes" onChange={infoCollect} />SHERLOCK HOLMES</td></tr>
          <br></br>
             {/* <tr><td><button style={{align:'center',marginBlockStart:'10px',marginInlineStart:'50px'} }>Submit</button></td></tr> */}
           <tr><td><input type='button' onClick={callPropose} value="Submit" />
