@@ -1,6 +1,7 @@
-.backgimg{
-  width: 100%;
-  height: 100vh;
+.bgimage{
+  background-image: url(../public/image/backgroundimage.png);
+  /* width: 100%;   
+  height: 100vh; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

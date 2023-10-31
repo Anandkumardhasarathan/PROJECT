@@ -23,3 +23,8 @@ Content-Type: application/json
 {
     "Event_type":"Quiz"
 }
+
+
+//pdf generator
+
+GET http://localhost:2004/generate-pdf

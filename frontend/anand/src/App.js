@@ -21,7 +21,7 @@ const Head=()=>{
 export const Backg=()=>{
   return(
     <div className="bgimage">
-      <img className='backgimg'  alt="bg" src="image/mec\backgroundimage.png"/>
+          
     </div>
   )
 }
