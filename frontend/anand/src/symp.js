@@ -1,4 +1,4 @@
-import './symp.css';
+import './symp.css'
 import { useState } from 'react';
 // import axios from 'axios';
 import onProposalsLoad from './fnbconnect';

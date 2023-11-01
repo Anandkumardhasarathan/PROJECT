@@ -26,3 +26,14 @@ body{
     padding-bottom: 300px; 
     padding-right: 200px;
 }
+
+.cyopbut{
+    color: blue;
+    background-color: cadetblue;
+    padding-top: 10px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    margin-left: 25px;
+    border-radius: 20px;
+}   
