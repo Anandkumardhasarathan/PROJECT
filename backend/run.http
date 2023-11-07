@@ -1,19 +1,21 @@
 GET http://localhost:7541/list
 
+###
 POST http://localhost:7541/newrecord
 Content-Type: application/json
 
 {
-    "Symp_id":99,
-    "Stu_name":"ak",
+    "Symp_id":52,
+   "Stu_name":"Kalai Priyan",
     "College_name":"Muthayammal Engineering College",
     "Year":"II",
     "Course":"Computer science ",
-    "Email_id":"dhanush08@gmail.com",
-    "Contact":98765678,
+    "Email_id":"kalaipriyan08@gmail.com",
+    "Contact":6385799841,
     "Event_type":"Quiz"
 }
 
+###
 DELETE http://localhost:7541/delete/karthi
 
 
@@ -29,3 +31,26 @@ Content-Type: application/json
 //pdf generator
 
 GET http://localhost:2004/generate-pdf
+
+
+
+
+
+//college project
+
+###
+GET http://localhost:7541/list
+
+###
+
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    
+    "Name_of_the_faculty":"anand",
+    "Name_of_the_Module_Developed":"ak",
+    "Module_of_platform":"hai",
+    "Date_of_launching_e_content":"986",
+    "Link_to_the_module_developed":"http"
+}

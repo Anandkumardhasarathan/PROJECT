@@ -1,0 +1,131 @@
+
+html{
+    min-height: 100%;
+} 
+ body{
+    background-color: rgb(183, 243, 243);
+    
+} 
+
+.overallcontent{
+    width: 45%;
+    padding: 65px;
+    background-color: white;
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 30%;
+}
+.overallcontent label {
+    display: block;
+   
+}
+
+/* .ej select {
+    width: 200%;
+} */
+.block  {
+    flex-direction: block;
+    margin-left: 10px;
+    
+    margin-right: 50px;
+}
+.font{
+    font-size: 20px;
+    color: azure;
+}
+.overallcontent hr{
+    border-top: 3px;
+    color: white;
+    /* border-overallcontent: solid; */
+
+
+}
+.head{
+        text-align: center;
+        color: aqua;
+        margin-bottom: 50px;
+}
+.overallcontent h3{
+    color: aquamarine;
+    
+}
+.overallcontent tr{
+    color: black;
+    
+}
+.tech{
+    color: whitesmoke;
+}
+
+.ej{
+    padding: 15px;
+    background-color: rgb(250, 239, 239);
+    border-radius: 30px;
+    
+}
+
+
+
+.ej input {
+    width: 200%;
+    border-radius: 9px;
+    border-color: black;
+    border-width: 3px;
+    padding: 5px;
+}
+
+/* .ej select {
+    width: 425%;
+    border-radius: 9px;
+    border-color: black;
+    border-width: 3px;
+    padding: 5px;
+} */
+
+
+.clear{
+    margin-left: 300px; 
+    
+} 
+.overallcontent button{
+    background-color : lightskyblue;
+    border-radius:10px;
+    padding: 0px;
+    border-color: white;
+    border-width:3px;
+}
+.year{
+    color: aquamarine;
+}
+ input:focus{
+    background-color: #c0c0c0 ;
+    
+}
+
+select{
+    width: 10px;
+    padding: 10px 5px 10px 5px;
+    border-radius: 10px;
+    border-width: 3px;
+    border-color: black;
+
+}
+.fellowship{
+    width: 253px;
+}
+.awardorg{
+    width: 253px;
+    
+}
+
+.pdf{
+    width:'10px'
+}
+
+.facultyn{
+    width: 100px;
+    
+}
+

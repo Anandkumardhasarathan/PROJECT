@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "mec.js",
+  "main": "corporate_training.js",
   "scripts": {
-    "start": "nodemon mec.js",
+    "start": "nodemon corporate_training",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

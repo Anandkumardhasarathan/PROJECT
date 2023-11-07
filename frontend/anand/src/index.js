@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import New from './symp';
+// import Add from './mec';
+// import New from './symp';
+// import Add from './mec';
+// import Award from './award_n_in';
+import Consultancy from './consultancy';
 
 
 
@@ -9,7 +13,10 @@ import New from './symp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-   <New/>
+  {/* <Add/> */}
+   {/* <New/> */}
+   {/* <Award/> */}
+   <Consultancy/>
    
   </>
 

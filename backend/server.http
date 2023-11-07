@@ -1,0 +1,43 @@
+//corporate project
+GET http://localhost:7541/list
+
+
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+{
+ "s_no":"03",
+    "academic_year":"202324",
+    "semester":"Odd",
+    "name_of_faculty":"anand",
+   "name_of_consultancy_project":"hai",
+    "sponsoring_agency_details":"barani and co",
+    "date":"2023-02-20",
+    "Revenue_generated":"1000000",
+    "number_of_trainies":"razak",
+    "attachments":"",
+    "proof_pdf":""
+}
+
+
+    //award
+
+GET http://localhost:7541/list
+###
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    
+    "Academin_year":202324,
+    "semester":"odd",
+    "name_of_faculty_awarded":"anand",
+    "name_of_the_award":"bravery",
+    "category":"national",
+    "date_of_award":"2023-09-10",
+    "name_of_awarding_org":"NGO",
+    "attachments":"",
+    "award_certificate":""
+}
+
+
+//e-content

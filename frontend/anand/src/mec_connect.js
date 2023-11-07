@@ -1,0 +1,29 @@
+import axios  from "axios"
+const url="http://localhost:7541"
+// const onProposalsLoad=async(dept_id)=>{
+const onProposalsLoad=async(s_no)=>{
+    
+    // alert(dept_id)
+    const returned=await axios.get(`${url}/list`)
+    let ids=[]
+        returned.data.rows.map((v)=>{
+            ids.push(v)
+        })
+        return ids  
+}
+
+  
+export const onPropose=async(obj)=>{
+
+   
+
+    // alert(JSON.stringify(obj))
+    const returned = await axios.post(`${url}/newrecord`,obj)
+    return returned.data
+}
+
+export default onProposalsLoad
+
+
+
+

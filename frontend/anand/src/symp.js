@@ -2,7 +2,7 @@ import './symp.css'
 import { useState } from 'react';
 // import axios from 'axios';
 import onProposalsLoad from './fnbconnect';
-import { onPropose } from './fnbconnect';
+// import { onPropose } from './fnbconnect';
 import axios from 'axios';
 
  const New=()=>{
