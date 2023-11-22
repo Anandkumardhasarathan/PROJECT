@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import "./mec.css"
 import { Econtent } from "./mec.js";
 import Award from "./award_n_in.js";
+import Consultancy from "./consultancy";
 
  export const Setaf=()=>{
 
@@ -12,21 +13,24 @@ import Award from "./award_n_in.js";
   const infoCollect=(eve)=>{
     const{name,value}=eve.target
     setsetafsubtype((old)=>{
-      if(name==="Subtype" && value==="econtent"||name==="Subtype" && value==="award"){
+      if(name==="Subtype" && value==="econtent"||name==="Subtype" && value==="award"||name==="Subtype" && value==="consultancy"){
       return{
         ...old,
-        [name]:eve.target.name
+        [name]:eve.target.value
     }
   }
     })
   }
 
   const Condition=()=>{
-    if(setafsubtype.Subtype==="Subtype"  ){
+    if(setafsubtype.Subtype==="econtent"  ){
       return<Econtent/>
     }
-    else if(setafsubtype.Subtype==="Subtype" ){
+    else if(setafsubtype.Subtype==="award" ){
       return<Award/>
+    }
+    else if(setafsubtype.Subtype==="consultancy"){
+      return<Consultancy/>
     }
   }
 
@@ -47,9 +51,9 @@ import Award from "./award_n_in.js";
             <tr><label><b>Sub type</b></label>
             <select name="Subtype" onChange={infoCollect} style={{width:'500px',marginBottom:'30px'}}>
               <option>Select sub type...</option>
-              <option name="econtent" value={"econtent"} onChange={infoCollect}>e-Content</option>
-              <option name="an" value={"award"} onChange={infoCollect}>Award at National and International Level</option>
-              <option name="consultancy" value="consultancy" onChange={infoCollect}>16.Consultancy and Corporate Training done for Revenue Generation</option>   
+              <option  value="econtent" >e-Content</option>
+              <option  value="award" >Award at National and International Level</option>
+              <option  value="consultancy">Consultancy and Corporate Training done for Revenue Generation</option>   
             </select> 
             </tr>
             <Condition/>

@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "corporate_training.js",
+  "main": "e_content.js",
   "scripts": {
-    "start": "nodemon corporate_training",
+    "start": "nodemon e_content",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
