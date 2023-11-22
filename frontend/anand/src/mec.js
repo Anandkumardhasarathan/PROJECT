@@ -3,7 +3,7 @@ import axios from "axios"
 import "./mec.css"
 // import {useNavigate} from 'react';
 
- export const Add=()=>{
+ export const Econtent=()=>{
   const[information,setInformation]=useState("")
 
   const[Symposium,setSymposium]=useState({
@@ -138,4 +138,4 @@ const callPropose=async()=>{
 }
 
 
-export default Add
+export default Econtent

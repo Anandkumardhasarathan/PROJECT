@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Setaf from './setaf';
+// import Econtent from './mec';
 // import Add from './mec';
 // import New from './symp';
 // import Add from './mec';
 // import Award from './award_n_in';
-import Consultancy from './consultancy';
+// import Consultancy from './consultancy';
 
 
 
@@ -16,8 +18,9 @@ root.render(
   {/* <Add/> */}
    {/* <New/> */}
    {/* <Award/> */}
-   <Consultancy/>
-   
+   {/* <Consultancy/> */}
+   <Setaf/> 
+    {/* <Econtent/> */}
   </>
 
        

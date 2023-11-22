@@ -3,7 +3,7 @@ import axios from "axios"
 import "./mec.css"
 // import {useNavigate} from 'react';
 
- export const Add=()=>{
+ export const Award=()=>{
   // const[information,setInformation]=useState("")
 
   const[Symposium,setSymposium]=useState({
@@ -68,7 +68,7 @@ const callPropose=async()=>{
     <>
    <div className='overallcontent'>
     <div className='style'>
-        <div className='head'><h1 style={{color:'purple'}}>E-CONTENT</h1></div>
+        <div className='head'><h1 style={{color:'purple'}}>AWARD AT NATIONAL AND INTERNATIONAL LEVEL</h1></div>
       <form className='block' >
         
         <div className='font'>
@@ -180,4 +180,4 @@ const callPropose=async()=>{
 }
 
 
-export default Add
+export default Award

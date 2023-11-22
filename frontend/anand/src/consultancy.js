@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import axios from "axios"
 import "./mec.css"
 
@@ -42,7 +42,7 @@ import "./mec.css"
                   [name]:parseInt(value)
               }
           }
-      })
+        })
     }
     
     const callPropose=async()=>{
