@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "e_content.js",
+  "main": "seed_money_proposal_for_research.js",
   "scripts": {
-    "start": "nodemon e_content",
+    "start": "nodemon seed_money_proposal_for_research.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

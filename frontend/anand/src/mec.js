@@ -74,6 +74,7 @@ const callPropose=async()=>{
               <label><b>Name of the Faculty</b></label>
          
             <select name="Name_of_the_faculty" value={Symposium.faculty_name} onChange={infoCollect} className='facultyn' style={{width:'500px',marginBottom:'30px'}}>
+              <option>--</option>
               <option>Anandha Kumar</option>
               <option>Barani Keshava</option>
             </select>

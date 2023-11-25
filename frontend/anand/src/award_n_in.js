@@ -81,6 +81,7 @@ const callPropose=async()=>{
               <label><b>Academic Year</b></label>
               <select name="Academin_year" placeholder='Accademic Year' value={Symposium.Academin_year} onChange={infoCollect} style={{width:'500px',marginBottom:'30px'}}>
               <option>--</option>
+              <option>--</option>
               <option>2022-23</option>
               <option>2023-24</option>
               </select>
@@ -103,6 +104,7 @@ const callPropose=async()=>{
               <label><b>Name of the Faculty  Awarded National/ <br></br> International Fellowship</b></label>
          
             <select name="name_of_faculty_awarded" value={Symposium.name_of_faculty_awarded} onChange={infoCollect} className='facultyn' style={{width:'500px',marginBottom:'30px'}}>
+              <option>--</option>
               <option>Anandha Kumar</option>
               <option>Barani Keshava</option>
             </select>

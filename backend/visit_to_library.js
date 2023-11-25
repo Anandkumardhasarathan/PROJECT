@@ -1,7 +1,6 @@
-const express= require('express')
+const express=require('express')
 const bodyparser=require('body-parser')
 const mysql=require('mysql2')
-
 const cors=require('cors')
 // const upndel=require('./sympmodify')
 
@@ -32,7 +31,7 @@ server.listen(7541,(err)=>{
 
 
 server.get('/list',async(req,res)=>{
-    const sql="select * from data_setaf_e_content";
+    const sql="select * from data_setaf_visit_to_the_library";
     database.query(sql,(err,result)=>{
         if(err){
             res.status(500).json({'error':err.message})
@@ -46,12 +45,10 @@ server.get('/list',async(req,res)=>{
     })
 })
 
-
-
 server.post('/newrecord',async(req,res)=>{
-    const{s_no,Name_of_the_faculty,Name_of_the_Module_Developed,Module_of_platform,Date_of_launching_e_content,Link_to_the_module_developed}=req.body
-    const sql="insert into data_setaf_e_content values(?,?,?,?,?,?)"
-    database.query(sql,[s_no,Name_of_the_faculty,Name_of_the_Module_Developed,Module_of_platform,Date_of_launching_e_content,Link_to_the_module_developed],(err,records)=>{
+    const{s_no,name_of_the_faculty,date,purpose_of_visit}=req.body
+    const sql="insert into data_setaf_visit_to_the_library values(?,?,?,?)"
+    database.query(sql,[s_no,name_of_the_faculty,date,purpose_of_visit],(err,records)=>{
         if(err){
             res.status(500).json({'error':err.message})
             return
@@ -61,3 +58,5 @@ server.post('/newrecord',async(req,res)=>{
     })
 
 })
+
+

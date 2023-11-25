@@ -40,4 +40,109 @@ Content-Type: application/json
 }
 
 
-//e-content
+//professional society membership
+###
+GET http://localhost:7541/list
+
+###
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    "s_no":"01",
+    "academic_year":"20022003",
+    "semester":"odd",
+    "name_of_the_faculty":"anand",
+    "membership_id":"689865",
+    "date_of_membership":"20032004",
+    "professional_society_membership":"IEEE",
+    "attachments":"",
+    "certificate_pdf":""
+}
+
+//visit to the library
+
+###
+GET http://localhost:7541/list
+
+###
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    "s_no":"0",
+    "name_of_the_faculty":"Anand",
+    "date":"456855",
+    "purpose_of_visit":"taking reference"
+}
+
+//patent filled published granted
+
+###
+GET http://localhost:7541/list
+
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    "s_no":"",
+    "academic_year":"",
+    "semester":"",
+    "name_of_the_faculty":"",
+    "title_of_the_patent":"",
+    "application_no":"",
+    "date_of_application":"",
+    "date_of_published":"",
+    "attachments":"",
+    "enclose_first_page_pdf":""
+}
+
+
+//books chapters authorship
+
+###
+GET http://localhost:7541/list
+
+###
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    "s_no":"0",
+    "academic_year":"2002",
+    "semester":"odd",
+    "faculty_name":"ak",
+    "name_of_the_authors":"anand",
+    "title_of_the_book":"how to overcome stagefear",
+    "month_of_publication":"january",
+    "year_of_publication":"6656",
+    "isbn_number":"6886890",
+    "details_of_the_publisher":"he wrote this book from his experience",
+    "national_or_international":"national",
+    "attachments":"",
+    "enclose_proof_pdf":""
+}
+
+
+//seed money proposal for research
+
+
+###
+GET http://localhost:7541/list
+
+
+###
+POST http://localhost:7541/newrecord
+Content-Type: application/json
+
+{
+    "s_no":"0",
+    "academic_year":"2023",
+    "semester":"odd",
+    "name_of_the_faculty":"anand",
+    "title_of_the_research_project":"newproject",
+    "amount_of_seed_money":"10000",
+    "year_of_receiving":"2024",
+    "attachments":"",
+    "metrf_sanction_letter_pdf":""
+}
